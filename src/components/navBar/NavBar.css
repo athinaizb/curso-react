@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    background-color: #fcf8eb;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-content{
+    margin-left: 10px;
+}
+
+.logo {
+    width: 150px;
+}
+
+.titulo {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: #caa7d1;
+}
+
+.link {
+    margin: 12px;
+
+}
