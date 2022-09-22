@@ -1,5 +1,6 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount';
+import ItemDetail from '../itemDetail/itemDetail';
 
 const Item = ({ item }) => {
 
@@ -12,10 +13,7 @@ const Item = ({ item }) => {
 
     return (
         <div className='item'>
-            <h1 className='item-title'>{nombre}</h1>
-            <h3>${precio}</h3>
-            <h3 className='item-detail'>{detail}</h3>
-            <img className='item-img' src={img}></img>
+            <ItemDetail item={item} />
             <ItemCount initial={1} stock={stock} onAdd={onAdd} />
         </div>
     )
