@@ -1,25 +1,36 @@
 import React, { useState, useEffect } from 'react'
 import { customFetch } from '../../api/customFetch';
+import ItemCount from '../ItemCount/ItemCount';
 import ItemDetail from '../itemDetail/itemDetail';
+import productos from '../../api/productos';
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
-    const [prod, setProd] = useState({});
-    const producto = {
-        id: 1,
-        nombre: "Item ejemplo",
-        precio: 2500,
-        stock: 10,
-        detail: "item de ejemplo usando item detail container(hasta usar routes)",
-        img: 'https://i.ibb.co/CbWzgcF/brownie.jpg'
-    };
+    const [prod, setProd] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const { id } = useParams()
+
     useEffect(() => {
-        customFetch(producto)
-            .then(data => setProd(data))
+        customFetch(productos)
+            .then((res) => {
+                setProd(
+                    res.find((item) => item.id === Number(id)))
+                setLoading(false);
+            }
+            )
     }, [])
+
+    const onAdd = (value) => {
+        alert(value);
+    }
 
     return (
         <div className='item'>
-            <ItemDetail item={prod} />
+            {loading && 'cargando...'}
+            {prod && <> <ItemDetail item={prod} />
+                <ItemCount initial={1} stock={prod.stock} onAdd={onAdd} />
+            </>}
+
         </div>
     )
 }

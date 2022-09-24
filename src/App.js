@@ -7,14 +7,23 @@ import './components/itemDetail/itemDetail.css';
 import NavBar from './components/navBar/NavBar';
 import ItemListContainer from './components/itemsListContainer/ItemListContainer';
 import ItemDetailContainer from './components/itemDetailContainer/itemDetailContainer';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <NavBar />
-      <ItemListContainer greeting={'Bienvenido a mi tienda de pastelería artesanal'} />
-      <ItemDetailContainer></ItemDetailContainer>
-    </>
+      <Routes>
+        <Route exact path="/" element={<ItemListContainer greeting={'Bienvenido a mi tienda de pastelería artesanal'} />}>
+        </Route>
+        <Route path="/category/:id" element={<ItemListContainer greeting={'Bienvenido a mi tienda de pastelería artesanal'} />
+        }>
+        </Route>
+        <Route exact path="/item/:id" element={<ItemDetailContainer></ItemDetailContainer>}>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,20 +1,23 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount';
 import ItemDetail from '../itemDetail/itemDetail';
+import { useNavigate } from 'react-router-dom';
 
 const Item = ({ item }) => {
 
-    const { nombre, precio, stock, detail, img } = item;
+    const { nombre, precio, stock, detail, img, id } = item;
 
-
-    const onAdd = (value) => {
-        alert(value);
+    const navigate = useNavigate();
+    const clickHandler = () => {
+        navigate(`/item/${id}`);
     }
 
+
+
     return (
-        <div className='item'>
+        <div className='item' onClick={clickHandler}>
             <ItemDetail item={item} />
-            <ItemCount initial={1} stock={stock} onAdd={onAdd} />
+
         </div>
     )
 }
