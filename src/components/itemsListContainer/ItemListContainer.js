@@ -29,11 +29,9 @@ const ItemListContainer = (props) => {
 
   return (
     <>
+      {!loading && <p className='saludo-inicial'>{greeting}</p>}
       {loading && 'cargando...'}
       <ItemList items={prods}></ItemList>
-      <p>{greeting}</p>
-
-
     </>
   )
 }

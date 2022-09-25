@@ -27,10 +27,7 @@ const ItemDetailContainer = () => {
     return (
         <div className='item'>
             {loading && 'cargando...'}
-            {prod && <> <ItemDetail item={prod} />
-                <ItemCount initial={1} stock={prod.stock} onAdd={onAdd} />
-            </>}
-
+            {prod && <ItemDetail item={prod} />}
         </div>
     )
 }
