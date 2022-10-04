@@ -8,25 +8,31 @@ import './components/itemsListContainer/ItemListContainer.css'
 import NavBar from './components/navBar/NavBar';
 import ItemListContainer from './components/itemsListContainer/ItemListContainer';
 import ItemDetailContainer from './components/itemDetailContainer/itemDetailContainer';
-import React from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { CartProvider } from './context/CartContext';
+import Cart from './components/cart/Cart';
 
 function App() {
+
+  // const cartValue = useContext (CartProvider);
   return (
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route exact path="/" element={<ItemListContainer greeting={'¡Bienvenido a Athina pastelería!'} />}>
-        </Route>
-        <Route path="/category/:id" element={<ItemListContainer greeting={'¡Bienvenido a Athina pastelería!'} />
-        }>
-        </Route>
-        <Route path="/item/:id" element={<ItemDetailContainer></ItemDetailContainer>}>
-        </Route>
-        <Route path="/cart" element={<></>}>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route exact path="/" element={<ItemListContainer greeting={'¡Bienvenido a Athina pastelería!'} />}>
+          </Route>
+          <Route path="/category/:id" element={<ItemListContainer greeting={'¡Bienvenido a Athina pastelería!'} />
+          }>
+          </Route>
+          <Route path="/item/:id" element={<ItemDetailContainer></ItemDetailContainer>}>
+          </Route>
+          <Route path="/cart" element={<Cart></Cart>}>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 

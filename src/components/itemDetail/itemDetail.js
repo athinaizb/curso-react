@@ -2,28 +2,31 @@ import React, { useState } from 'react'
 import ItemCount from '../ItemCount/ItemCount';
 import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
+import { useCart } from '../../context/CartContext';
+
 
 const ItemDetail = ({ item }) => {
 
     const { nombre, precio, stock, detail, img, id } = item;
     const [showCount, setShowCount] = useState(true);
+    const { addItem } = useCart();
 
 
     const onAdd = (value) => {
         alert(value);
         setShowCount(false);
+        addItem(item, value);
     }
 
     const navigate = useNavigate();
-    
+
     const clickHandler = () => {
         navigate(`/item/${id}`);
     }
 
     const redirectToCart = () => {
-        navigate ('/cart');
+        navigate('/cart');
     }
-
     return (
         <>
             <div onClick={clickHandler}>
