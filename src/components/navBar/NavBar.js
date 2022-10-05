@@ -1,8 +1,12 @@
 import React from 'react'
 import CartWidget from '../cartWidget/CartWidget';
 import { useNavigate, Link } from 'react-router-dom';
+import { useCart } from '../../context/CartContext';
 
 const NavBar = () => {
+
+    const { getTotalAmountAndQuantity} = useCart();
+    const {cantidad, total} = getTotalAmountAndQuantity();
     const navigate = useNavigate();
     const clickHandler = () => {
         navigate("/");
@@ -19,7 +23,7 @@ const NavBar = () => {
                     <Link to={""} className='link'>Inicio</Link>
                     <Link to={"/category/clasicos"} className='link'>Clásicos</Link>
                     <Link to={"/category/vanguardia"} className='link'>Vanguardia</Link>
-                    <CartWidget />
+                    {cantidad ? <Link to={"/cart"}><CartWidget /> {cantidad} </Link> : <></> }
                 </nav>
             </div>
 

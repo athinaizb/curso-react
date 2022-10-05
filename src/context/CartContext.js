@@ -10,9 +10,9 @@ export const CartProvider = ({ children }) => {
     // ejemplo para borrar
 
     const removeItem = (id) => {
-        cart.filter((producto) => {
+        setCart(cart.filter((producto) => {
             return producto.id !== id;
-        })
+        }));
     }
     // addItem 
     const addItem = (item, quantity) => {
@@ -42,8 +42,18 @@ export const CartProvider = ({ children }) => {
         return cart.some((prod) => prod.id === id);
     };
 
+    const getTotalAmountAndQuantity = () => {
+        let contador = 0;
+        let cantidad = 0;
+        cart.forEach(element => {
+            contador = contador + element.precio;
+            cantidad = cantidad + element.quantity;
+        });
+        return {"cantidad": cantidad, "total": contador};
+    }
+
     return (
-        <CartContext.Provider value={{ cart, removeItem, addItem, clear, isInCart }} >
+        <CartContext.Provider value={{ cart, removeItem, addItem, clear, isInCart, getTotalAmountAndQuantity }} >
             {children}
         </CartContext.Provider>
     )
