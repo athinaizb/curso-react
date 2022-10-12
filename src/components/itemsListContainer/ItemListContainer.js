@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import ItemCount from '../ItemCount/ItemCount';
+import React, { useState, useEffect } from 'react';
 import ItemList from '../itemList/itemList';
-import productos from '../../api/productos';
-import { customFetch } from '../../api/customFetch';
 import { useParams } from "react-router-dom";
-
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../firebase";
 const ItemListContainer = (props) => {
   const [prods, setProds] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -12,18 +10,23 @@ const ItemListContainer = (props) => {
   const { id } = useParams();
 
 
-  useEffect(() => {
-    customFetch(productos)
-      .then((res) => {
-        if (id) {
-          setProds(res.filter((item) => item.category === id))
-        } else {
-          setProds(res)
+  useEffect (()=> {
+    setLoading(true)
+    const products = id ? query( collection(db, "items"), where("category", "==", id) ) : collection(db, "items")
+    getDocs(products)
+    .then((res)=> {
+      const list = res.docs.map((product)=> {
+        return{
+          id:product.id,
+          ...product.data()
         }
-        setLoading(false);
-      }
-      )
-  }, [id])
+      })
+      setProds(list)
+    })
+    .catch((error)=>console.log(error))
+    .finally(()=>setLoading(false))
+  }, [id]);
+
 
   return (
     <>
