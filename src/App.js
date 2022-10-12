@@ -21,14 +21,15 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route exact path="/" element={<ItemListContainer greeting={'¡Bienvenido a Athina pastelería!'} />}>
-          </Route>
+    
           <Route path="/category/:id" element={<ItemListContainer greeting={'¡Bienvenido a Athina pastelería!'} />
           }>
           </Route>
           <Route path="/item/:id" element={<ItemDetailContainer></ItemDetailContainer>}>
           </Route>
           <Route path="/cart" element={<Cart></Cart>}>
+          </Route>
+          <Route exact path="/" element={<ItemListContainer greeting={'¡Bienvenido a Athina pastelería!'} />}>
           </Route>
         </Routes>
       </BrowserRouter>

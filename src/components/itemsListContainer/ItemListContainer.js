@@ -12,8 +12,6 @@ const ItemListContainer = (props) => {
   const { id } = useParams();
 
 
-  // const array = [{ nombre: "Torta brownie", precio: "$2800" }, { nombre: "Torta brownie 2", precio: "$3000" }];
-
   useEffect(() => {
     customFetch(productos)
       .then((res) => {
@@ -25,7 +23,7 @@ const ItemListContainer = (props) => {
         setLoading(false);
       }
       )
-  }, [])
+  }, [id])
 
   return (
     <>
