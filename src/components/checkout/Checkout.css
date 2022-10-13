@@ -1,0 +1,14 @@
+.checkout-box{
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.checkout-contianer{
+display: inline-block;
+}
+.input-text  {
+    margin-top: 12px !important;
+    margin-bottom: 8px !important;
+}

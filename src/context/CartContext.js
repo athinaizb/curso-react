@@ -24,7 +24,7 @@ export const CartProvider = ({ children }) => {
                     return { ...prod, quantity: prod.quantity + item.quantity } //actualiza la cantidad
                 }
                  else {
-                    return { ...prod} //sino setea un item nuevo con la cant enviada 
+                    return { ...prod} //sino setea un item nuevo
                 }
             })
             setCart(carritoActualizado)

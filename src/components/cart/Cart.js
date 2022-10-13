@@ -23,8 +23,8 @@ const Cart = () => {
 
             )
             )}
-            {console.log(cart)}
             <h2>Cantidad de items: {cantidad}  Valor Total  ${total}</h2>
+            <Link to='/checkout'><Button variant="outlined">Finalizar compra</Button></Link>
             </> : <>
 
             <h3>Aun no tienes productos en el carrito, vuelve al inicio y selecciona los productos que quieras agregar</h3>
