@@ -22,8 +22,9 @@ export const CartProvider = ({ children }) => {
             const carritoActualizado = cart.map((prod) => { //recorre el cart 
                 if (prod.id === item.id) { //si el id es el mismo 
                     return { ...prod, quantity: prod.quantity + item.quantity } //actualiza la cantidad
-                } else {
-                    return { ...prod, quantity: quantity } //sino setea un item nuevo con la cant enviada 
+                }
+                 else {
+                    return { ...prod} //sino setea un item nuevo con la cant enviada 
                 }
             })
             setCart(carritoActualizado)
@@ -46,7 +47,7 @@ export const CartProvider = ({ children }) => {
         let contador = 0;
         let cantidad = 0;
         cart.forEach(element => {
-            contador = contador + element.precio;
+            contador = contador + (element.precio * element.quantity);
             cantidad = cantidad + element.quantity;
         });
         return {"cantidad": cantidad, "total": contador};
