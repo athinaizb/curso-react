@@ -70,7 +70,10 @@ const Checkout = () => {
     </div>}
 
 
-    {orderId && <span> Su numero de orden es {orderId}</span>}
+    {orderId && <>
+    <h3 className='datos'>Su pedido fue realizado con exito!</h3>
+    <span className='datos'> Su numero de orden es {orderId}</span>
+    </>}
   </>
   )
 }
