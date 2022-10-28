@@ -6,6 +6,7 @@ import './components/itemList/itemList.css';
 import './components/itemDetail/itemDetail.css';
 import './components/itemsListContainer/ItemListContainer.css';
 import './components/checkout/Checkout.css';
+import './components/cart/Cart.css';
 import NavBar from './components/navBar/NavBar';
 import ItemListContainer from './components/itemsListContainer/ItemListContainer';
 import ItemDetailContainer from './components/itemDetailContainer/itemDetailContainer';

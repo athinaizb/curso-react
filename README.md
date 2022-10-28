@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# E-commerce. Hecho por [Athina Irazabal](https://github.com/athinaizb)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# [![CSS](https://img.shields.io/badge/Link%20al%20sitio-blueviolet)](https://athinaizb.github.io/curso-react/)
 
-## Available Scripts
+# Athina Pasteleria - Aplicacion desarrolada con React.js
 
-In the project directory, you can run:
+## Comandos
 
-### `npm start`
+Init Proyect
+`npm i`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Develop mode
+`npm start`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Deploy
+`npm run build`
 
-### `npm test`
+# Dependencias
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    @mui/icons-material: ^5.10.2,
+    @mui/material: ^5.10.2,
+    @firebase: ^9.10.0,
+    @sweetalert2: ^11.6.4,
+    @react-spinners: ^0.13.6,
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Descripción
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Athina Pasteleria es una single-page application  basado en un emprendemiento de venta de postres artesanales. Los productos y la orden de compra con los pedidos se almacenan en firebase.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+La pagina consiste en una pagina principal, donde se muestran los productos que se ofrecen, se puede ver su nombre y su precio. Se puede agregar productos al carrito haciendo click.
 
-### `npm run eject`
+### Items
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Asimismo, si se hace click en la imagen del producto se llevara a la card del mismo, en donde se dara una descripcion del producto y una botonera para poder agregar productos al carrito. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Categorías
+ En la barra de navegación se puede elegir entre las dos categorías de productos para visualizar. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Carrito
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+El carrito muestra la totalidad de los productos elegidos.
+Finalmente consta de un boton para poder finalizar la compra, el cual te dirige hacia un formulario en el cual se debe introducir nombre, telefono y mail para poder generar una orden (la genera firebase una vez validado el formulario).
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Librerías utilizadas
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Material UI v5
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Esta libreria fue utilizada debido a que nos otorga un abanico de posibilidades muy variado para  crear vistas dinámicas e interactivas de gran calidad, para que la experiencia de navegacion sea mas amena para el usuario.
