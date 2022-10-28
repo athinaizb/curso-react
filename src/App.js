@@ -26,6 +26,9 @@ function App() {
         <Routes>
           <Route exact path="/" element={<ItemListContainer greeting={'¡Bienvenido a Athina pastelería!'} />}>
           </Route>
+          <Route path="curso-react" element={<ItemListContainer greeting={'¡Bienvenido a Athina pastelería!'} />}>
+          </Route>
+          
           <Route path="/category/:id" element={<ItemListContainer greeting={'¡Bienvenido a Athina pastelería!'} />}>
           </Route>
           <Route path="/item/:id" element={<ItemDetailContainer></ItemDetailContainer>}>
