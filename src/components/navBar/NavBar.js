@@ -11,7 +11,7 @@ const NavBar = () => {
 
     return (
         <header className='header'>
-            <img src="../../assets/logo.png" className='logo' ></img>
+            <img src="https://iili.io/b26aHB.png" className='logo' ></img>
             <div className='nav-content'>
 
                 <h1 className='titulo'>Athina pastelería</h1>
